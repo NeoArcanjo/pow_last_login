@@ -10,7 +10,6 @@ defmodule PowLastLogin.Ecto.Context do
           {:ok, Context.user()} | {:error, Context.changeset()}
   def update_last_login(user, login_from, config) do
     user
-    |> IO.inspect()
     |> Schema.last_login_changeset(login_from)
     |> Context.do_update(config)
   end
