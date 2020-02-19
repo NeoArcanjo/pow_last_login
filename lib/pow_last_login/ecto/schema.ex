@@ -23,6 +23,7 @@ defmodule PowLastLogin.Ecto.Schema do
     |> Changeset.put_change(:current_login_at, login_at)
     |> Changeset.put_change(:current_login_from, login_from)
   end
+
   def last_login_changeset(user, login_from) do
     user
     |> Changeset.change()

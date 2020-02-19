@@ -19,7 +19,7 @@ defmodule PowLastLogin.MixProject do
 
       # Docs
       name: "PowLastLogin",
-      docs: docs(),
+      docs: docs()
     ]
   end
 
@@ -35,12 +35,9 @@ defmodule PowLastLogin.MixProject do
       {:ecto, "~> 2.2 or ~> 3.0"},
       {:phoenix, "~> 1.3.0 or ~> 1.4.0"},
       {:phoenix_html, ">= 2.0.0 and <= 3.0.0"},
-
       {:phoenix_ecto, "~> 4.0.0", only: [:dev, :test]},
       {:credo, "~> 0.9.3", only: [:dev, :test]},
-
       {:ex_doc, "~> 0.19.0", only: :dev},
-
       {:ecto_sql, "~> 3.0.0", only: [:test]},
       {:jason, "~> 1.0", only: [:test]},
       {:postgrex, "~> 0.14.0", only: [:test]}

@@ -6,11 +6,14 @@ defmodule PowLastLogin.Ecto.SchemaTest do
   alias PowLastLogin.Ecto.Schema
   alias PowLastLogin.Test.{Users.User}
 
-  @password      "secret1234"
-  @user          Ecto.put_meta(%User{email: "test@example.com", password: @password, confirm_password: @password}, state: :loaded)
+  @password "secret1234"
+  @user Ecto.put_meta(
+          %User{email: "test@example.com", password: @password, confirm_password: @password},
+          state: :loaded
+        )
 
-  @first_login_at    DateTime.utc_now()
-  @first_login_from  "127.0.0.1"
+  @first_login_at DateTime.utc_now()
+  @first_login_from "127.0.0.1"
   @second_login_from "127.0.0.2"
 
   test "user_schema/1" do

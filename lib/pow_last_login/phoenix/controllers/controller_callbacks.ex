@@ -22,14 +22,14 @@ defmodule PowLastLogin.Phoenix.ControllerCallbacks do
     |> Context.update_last_login(remote_ip, config)
     |> case do
       {:error, _changeset} -> {:error, conn}
-      {:ok, user}          -> {:ok, maybe_renew_conn(conn, user, config)}
+      {:ok, user} -> {:ok, maybe_renew_conn(conn, user, config)}
     end
   end
 
   defp maybe_renew_conn(conn, %{id: user_id} = user, config) do
     case Plug.current_user(conn, config) do
       %{id: ^user_id} -> Plug.get_plug(config).do_create(conn, user, config)
-      _any            -> conn
+      _any -> conn
     end
   end
 end
